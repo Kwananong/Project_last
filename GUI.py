@@ -8,7 +8,6 @@ import tkinter as tk
 
 
 font = ImageFont.truetype("./font/THSarabun.ttf", 50)
-
 model_dict = pickle.load(open('./model.p', 'rb'))
 model = model_dict['model']
 cap = cv2.VideoCapture()
@@ -22,7 +21,6 @@ cap = cv2.VideoCapture()
 # cap.open('VDO/หายใจไม่ออก.mov')                                    #มีคำแทรก  เป็นใบ้ ไม่เป็นไร ไม่ขึ้นคำว่า หายใจไม่ออก
 # cap.open('VDO/เคล็ดขัดยอก.mp4')                                    #err
 # cap.open('VDO/โรงพยาบาล1.mov')                                     #มีคำแทรก หมอ
-# cap.open('VDO/น้ำมูกไหล.mp4')                                       #มีคำว่า ไม่เป็นไร แทรก ไม่ขึ้นคำว่า น้ำมูกไหล
 # cap.open('VDO/มองไม่เห็น.mov')                                      #มีคำแทรก ไม่เป็นไร เป็นใบ้ 
 # cap.open('VDO/รถชน.mov')                                     #รันได้แต่มีคำว่าเป็น ใบ้ ไม่เป็นไร แทรกขึ้นมา ไม่ขึ้น รถชน
 
@@ -35,39 +33,39 @@ cap = cv2.VideoCapture()
 #เทสแล้ว 
 # cap.open('VDO/ฉัน1.mov')           #คลิปเบส
 # cap.open('VDO/ฉัน2.mp4')                                           
-# cap.open('VDO/ฉัน3.mp4')                                   #มีคำว่า จาม แทรก
+# cap.open('VDO/ฉัน3.mp4')                                   #มีคำว่า จาม แทรก แก้ไม่ได้*
 # cap.open('VDO/เธอ1.mov')           #คลิปเบส  
 # cap.open('VDO/เธอ2.mp4')                                  #err
-# cap.open('VDO/เพื่อน1.mp4')          #คลิปเบส                #มีคำว่า เจ็บ แทรกขึ้นมา
-# cap.open('VDO/เพื่อน2.mp4')                                 #มีคำว่า รถชน แทรกขึ้นมา          
-# cap.open('VDO/เพื่อน3.mov')                                 #มีคำว่า เจ็บ แทรกขึ้นมา
-# cap.open('VDO/สบายดี1.mov')                                         #มีคำว่า ไม่เป็นไร แทรกขึ้นมา
+# cap.open('VDO/เพื่อน1.mp4')          #คลิปเบส                #มีคำว่า เจ็บ แทรกขึ้นมา แก้แล้ว*
+# cap.open('VDO/เพื่อน2.mp4')                                 #มีคำว่า รถชน แทรกขึ้นมา แก้ไม่ได้      
+# cap.open('VDO/เพื่อน3.mov')                                 #มีคำว่า เจ็บ แทรกขึ้นมา แก้แล้ว*
+# cap.open('VDO/สบายดี1.mov')                                 #มีคำว่า ไม่เป็นไร แทรกขึ้นมา แก้แล้ว*
 # cap.open('VDO/สบายดี2.mp4')                                         
-# cap.open('VDO/สบายดี3.mp4')                                        
+# cap.open('VDO/สบายดี3.mp4')           #คลิปเบส                                 
 # cap.open('VDO/สบายดี4.mp4')                                       
 # cap.open('VDO/สบายดี5.mp4')                                       
 # cap.open('VDO/ชื่อ1.mov')            #คลิปเบส                #มีคำแทรก เจ็บ นามสกุล ชื่อ ไม่เข้าใจ
 # cap.open('VDO/ชื่อ2.mp4')                                   #err
 # cap.open('VDO/นามสกุล1.mov')        #คลิปเบส  
-# cap.open('VDO/นามสกุล2.mov')                               #มีคำว่า เจ็บ แทรก
+# cap.open('VDO/นามสกุล2.mov')                               #มีคำว่า เจ็บ แทรก แก้แล้ว*
 # cap.open('VDO/นามสกุล3.mp4')                               #err
-# cap.open('VDO/พ่อ1.mov')                                   #มีคำ ไม่ใช่ แทรก 
+# cap.open('VDO/พ่อ1.mov')                                   #มีคำ ไม่ใช่ แทรก แก้ไม่ได้
 # cap.open('VDO/พ่อ2.mov')             #คลิปเบส                          
 # cap.open('VDO/พ่อ3.mp4')                                   #err
-# cap.open('VDO/พ่อ4.mp4')                                   #มีคำ ไม่ใช่ แทรก 
-# cap.open('VDO/พ่อ5.mov')                                   #มีคำ ใช่ แทรก 
-# cap.open('VDO/แม่1.mov')             #คลิปเบส               #มีคำว่า เข้าใจ แทรก
+# cap.open('VDO/พ่อ4.mp4')                                   #มีคำ ไม่ใช่ แทรก แก้ไม่ได้
+# cap.open('VDO/พ่อ5.mov')                                   #มีคำ ใช่ แทรก แก้ไม่ได้
+# cap.open('VDO/แม่1.mov')             #คลิปเบส               #มีคำว่า เข้าใจ แทรก แก้ไม่ได้
 # cap.open('VDO/แม่2.mp4')                                   #err
-# cap.open('VDO/แม่3.mp4')                                   #มีคำว่า ที่ไหน แทรก
-# cap.open('VDO/แม่4.mov')                                   #มีคำว่า ใช่ แทรก
+# cap.open('VDO/แม่3.mp4')                                   #มีคำว่า ที่ไหน แทรก แก้ไม่ได้
+# cap.open('VDO/แม่4.mov')                                   #มีคำว่า ใช่ แทรก แก้ไม่ได้
 # cap.open('VDO/แม่5.mov')                                   #err 
 # cap.open('VDO/ไม่ใช่.mov')             #คลิปเบส
 # cap.open('VDO/ไม่เป็นไร1.mov')         #คลิปเบส
-# cap.open('VDO/ไม่เป็นไร2.mov')                              #มีคำว่า คลอดบุตร เป็นใบ้
+# cap.open('VDO/ไม่เป็นไร2.mov')                              #มีคำว่า คลอดบุตร เป็นใบ้ 
 # cap.open('VDO/ไม่เป็นไร3.mov') 
 # cap.open('VDO/ไม่เข้าใจ.mov')          #คลิปเบส
 # cap.open('VDO/หิว1.mov')              #คลิปเบส                                        
-# cap.open('VDO/หิว2.mov')                                   #มีคำว่า ไอ แทรก                                     
+# cap.open('VDO/หิว2.mov')                                   #มีคำว่า ไอ แทรก แก้ไม่ได้                               
 # cap.open('VDO/หิว3.mp4')                                   #err   
 # cap.open('VDO/ไม่สบาย1.mov')          #คลิปเบส                                                 
 # cap.open('VDO/ไม่สบาย2.mov')  
@@ -82,7 +80,7 @@ cap = cv2.VideoCapture()
 # cap.open('VDO/หย่า1.mov')                                   #มีคำว่า ไม่เป็นไร สบายดี แทรก
 # cap.open('VDO/หย่า2.mp4')                                    #มีคำแทรก ไม่เป็นไร เภสัช     
 # cap.open('VDO/หย่า3.mov')                                  #มีคำว่า ไม่เป็นไร แทรก 
-# cap.open('VDO/หย่า4.mov')              #คลิปเบส             #มีคำว่า สบายดี แทรก 
+# cap.open('VDO/หย่า4.mov')              #คลิปเบส             #มีคำว่า สบายดี แทรก แก้ไม่ได้
 # cap.open('VDO/ถอดเสื้อ1.mp4')           #คลิปเบส  
 # cap.open('VDO/ถอดเสื้อ2.mov')                                #มีคำแทรก คลอดบุตร หนาว 
 # cap.open('VDO/ฉีดยา1.mp4')    
@@ -92,20 +90,20 @@ cap = cv2.VideoCapture()
 # cap.open('VDO/01พยาบาล_Test.mp4')                            #น่าจะเพราะมีคำว่าฉีดยาแทรก err
 # cap.open('VDO/พยาบาล1.mov')            #คลิปเบส              #มีแทรก  ไม่เข้าใจ  ไม่เห็นคำว่าพยาบาลขึ้น ในเล่มเขียนไปว่าถูก **      
 # cap.open('VDO/พยาบาล2.mp4')                                    #ไม่ได้คิดในผล   err
-# cap.open('VDO/05เภสัช_Test.mp4')          #คลิปเบส  
+# cap.open('VDO/05เภสัช_Test.mp4')          #คลิปเบส                #มีคำว่า จาม แทรกมา
 # cap.open('VDO/คนไข้.mov')                 #คลิปเบส              #กระพริบ  
-# cap.open('VDO/หูหนวก1.mp4')                                   #มีคำว่า หูหนวก แทรกเข้ามา err
+# cap.open('VDO/หูหนวก1.mp4')                                   #มีคำว่า น้ำมูกไหล แทรกเข้ามา 
 # cap.open('VDO/หูหนวก2.mov')                                   #มีเป็นใบ้แทรกเข้ามา err
-# cap.open('VDO/หูหนวก3.mp4')              #คลิปเบส               #มีคำว่า ไม่เป็นไร แทรกเข้ามา err
+# cap.open('VDO/หูหนวก3.mp4')              #คลิปเบส               #มีคำว่า หิว สบายดี แทรกเข้ามา 
 # cap.open('VDO/เป็นใบ้.mov')                #คลิปเบส 
 # cap.open('VDO/รักษารากฟัน1.mp4')           #คลิปเบส
 # cap.open('VDO/รักษารากฟัน2.mp4')                                 #err  มีคำว่า เป็นใบ้ แทรก
 # cap.open('VDO/03คลอดบุตร_Test.mp4')       #คลิปเบส
 # cap.open('VDO/คลื่นไส้.mov')                #คลิปเบส
-# cap.open('VDO/อาเจียน.mov')                #คลิปเบส              #มีคำแทรก จาม 
-# cap.open('VDO/แพ้ยา1.mov')                 #คลิปเบส 
-# cap.open('VDO/แพ้ยา2.mov')            
-# cap.open('VDO/แพ้อาหาร1.mov') 
+# cap.open('VDO/อาเจียน.mov')                #คลิปเบส              #มีคำแทรก จาม แก้ไม่ได้
+# cap.open('VDO/แพ้ยา1.mov')                                     มีคำว่าหนาวแทรก
+# cap.open('VDO/แพ้ยา2.mov')                    #คลิปเบส  
+# cap.open('VDO/แพ้อาหาร1.mov')                                  #มีคำว่า หนาว แทรก
 # cap.open('VDO/แพ้อาหาร2.mov')                                    #err + มีคำแทรก
 # cap.open('VDO/ไอ.mov')                    #คลิปเบส                #มีคำแทรก  หิว น้ำมูกไหล    
 # cap.open('VDO/จาม.mov')                   #คลิปเบส 
@@ -119,7 +117,13 @@ cap = cv2.VideoCapture()
 # cap.open('VDO/คัน2.mov')            
 # cap.open('VDO/ตาย1.mov')                     #คลิปเบส   
 # cap.open('VDO/ตาย2.mov')                                          #err      
-# cap.open('VDO/อมยา.mov')                       #คลิปเบส      
+# cap.open('VDO/อมยา.mov')                       #คลิปเบส              #มีคำว่า สบายดี แทรก
+# cap.open('VDO/น้ำมูกไหล.mp4')                                       #มีคำว่า ไม่เป็นไร แทรก ไม่ขึ้นคำว่า น้ำมูกไหล แก้แล้ว*
+
+# cap.open('VDO/รวม1.mov')                       #คลิปรวมอันที่ถูกต้อง
+# cap.open('VDO/ผิดพลาด.mov')
+
+
    
 
 mp_holistic = mp.solutions.holistic
@@ -188,7 +192,7 @@ def update_data():
         return "สบายดี" 
     if "004004005" in joined_data:
         return "สบายดี"
-    if "004" in massage2 :
+    if "004004004004004004004004004004004004004004004004004004004004004004" in massage2 :
         return "ไม่เป็นไร" 
     # Check for "004" and count the next 3 characters only
     # if "004" in joined_data:
@@ -273,7 +277,9 @@ def update_data():
         return "หย่า"
 
 
-    if '052' in massage2 :
+    # if '052052' in massage2 :  #อันนี้ใช้ได้กับทั้ง 2 คลิป 
+    #     return "หนาว"
+    if '052052052052052052' in massage2 :
         return "หนาว"
     
     # -------------------------------------------------------------------------------------------------------- #
@@ -303,7 +309,7 @@ def update_data():
     if "056056056" in massage2 :
         return "จาม" 
     
-    if "006006006006006006006006006006006006006006006006006006006006006" in massage2 :
+    if "006006006006006006006006006006006006006006006006006006006006006006006006006006006006006006006" in massage2 :
         return "เจ็บ" 
     # if "006" in joined_data:
     #     position = joined_data.find("006")
@@ -342,9 +348,8 @@ def update_gui_text(label, prefix, text):
     label.update_idletasks()  
 
 def update_gui():
+    global prev_hand_state, joined_data, data__, massage2, data_, massage
     predicted_character = ''
-    global prev_hand_state
-    global joined_data, data__,massage2
 
     # เพิ่มตรงนี้เพื่อกำหนดค่าเริ่มต้นให้กับ prev_hand_state
     if 'prev_hand_state' not in globals():
@@ -360,10 +365,15 @@ def update_gui():
 
     hand_state = "OPEN" if results.left_hand_landmarks or results.right_hand_landmarks else "CLOSED"
     if hand_state != prev_hand_state:
+        data_ = []
         data__ = []
+        massage = ''
         joined_data = ''
         massage2 = ''
-        update_gui_text(value_label2, "", "")  # ลบข้อความออกเมื่อมือปิด
+        update_gui_text(value_label2, "", "")  # Clear the GUI text as well
+        update_gui_text(value_label4, "", "")
+        update_gui_text(value_label3, "Vocabulary :", "")
+        update_gui_text(value_label1, "Code :", "")
     prev_hand_state = hand_state
 
     data_aux = []
