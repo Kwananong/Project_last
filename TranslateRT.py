@@ -7,6 +7,8 @@ from PIL import ImageFont, ImageDraw, Image, ImageTk
 import tkinter as tk
 
 
+# แปลแยก น่าจะยังไม่เสร็จดี
+
 font = ImageFont.truetype("./font/THSarabun.ttf", 40)
 
 model_dict = pickle.load(open('./model.p', 'rb'))

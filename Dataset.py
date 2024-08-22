@@ -5,6 +5,10 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+# ดึงข้อมูลทั้งหมดจากรูปในโฟลเดอร์ data แล้วเก็บในไฟล์ data.pickle
+
+
 mp_holistic = mp.solutions.holistic
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -15,7 +19,7 @@ holistic = mp_holistic.Holistic(
     min_tracking_confidence=0.5,
 )
 
-def calculate_angle(a, b, c):
+def calculate_angle(a, b, c):       # ฟังก์ชันคำนวนมุม
     a = np.array(a)
     b = np.array(b)
     c = np.array(c)
@@ -28,7 +32,6 @@ def calculate_angle(a, b, c):
     return angle 
 
 DATA_DIR = './data'
-# data 40 error
 data = []
 labels = []
 
@@ -62,7 +65,7 @@ for dir_ in os.listdir(DATA_DIR):
                 data_aux.append(landmark.x - min_x)
                 data_aux.append(landmark.y - min_y)
         else:
-            # If no left hand landmarks are detected, fill the data_aux list with 0.999
+            # If no left hand landmarks are detected, fill the data_aux list with 1
             data_aux.extend([1] * 42)
 
         if results.right_hand_landmarks is not None:
@@ -80,7 +83,7 @@ for dir_ in os.listdir(DATA_DIR):
                 data_aux.append(landmark.x - min_x)
                 data_aux.append(landmark.y - min_y)
         else:
-            # หากไม่พบจุดที่มือขวาตรวจจับได้ ให้เติมรายการ data_aux ด้วย 0.999
+            # หากไม่พบจุดที่มือขวาตรวจจับได้ ให้เติมรายการ data_aux ด้วย 1
             data_aux.extend([1] * 42)
 
             ###### มุมบน มุมแขน #######
@@ -106,6 +109,7 @@ for dir_ in os.listdir(DATA_DIR):
             data_aux.extend([1] * 2)
 
         data_aux.extend(under_angle)
+
         ######## มุมล่าง มุมลำตัว ######## 
         if results.pose_landmarks is not None:
                     pose_landmarks = results.pose_landmarks.landmark
@@ -132,9 +136,8 @@ for dir_ in os.listdir(DATA_DIR):
             data_aux.extend([1] * 2)
     
 
-
-print(len(data))
-print(len(labels))
+# print(len(data))
+# print(len(labels))
 
 f = open('data.pickle', 'wb')
 pickle.dump({'data': data, 'labels': labels}, f)

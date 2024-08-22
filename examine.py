@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ไว้ตรวจสอบข้อมูลที่ดึงมาจจากภาพ
+# ไว้ตรวจสอบข้อมูลที่ดึงมาจากภาพ
 
 mp_holistic = mp.solutions.holistic
 mp_drawing = mp.solutions.drawing_utils

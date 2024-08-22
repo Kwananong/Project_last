@@ -12,6 +12,8 @@ model_dict = pickle.load(open('./model.p', 'rb'))
 model = model_dict['model']
 cap = cv2.VideoCapture()
 
+### แปลเป็นคำศัพท์ ####
+
 
 # error
 # cap.open('VDO/ใบรับรองแพทย์.mp4')                                 #ใบรับรองแพทย์ เทรนใหม่ 
@@ -86,7 +88,7 @@ cap = cv2.VideoCapture()
 # cap.open('VDO/ฉีดยา1.mp4')    
 # cap.open('VDO/ฉีดยา2.mp4')    
 # cap.open('VDO/หมอ1.mov')                                   #err
-# cap.open('VDO/หมอ2.mov')               #คลิปเบส
+cap.open('VDO/หมอ2.mov')               #คลิปเบส
 # cap.open('VDO/01พยาบาล_Test.mp4')                            #น่าจะเพราะมีคำว่าฉีดยาแทรก err
 # cap.open('VDO/พยาบาล1.mov')            #คลิปเบส              #มีแทรก  ไม่เข้าใจ  ไม่เห็นคำว่าพยาบาลขึ้น ในเล่มเขียนไปว่าถูก **      
 # cap.open('VDO/พยาบาล2.mp4')                                    #ไม่ได้คิดในผล   err
@@ -258,8 +260,14 @@ def update_data():
   
     if "045" in joined_data and "046" in joined_data:
           return "คลอดบุตร"
+    # if "051" in joined_data and "052" in joined_data and "053" in joined_data :
+    #     return "แพ้ยา"
     if "051" in joined_data and "052" in joined_data and "053" in joined_data :
-        return "แพ้ยา"
+        pos_051 = joined_data.find("051")
+        pos_052 = joined_data.find("052")
+        pos_053 = joined_data.find("053")
+        if pos_051 < pos_052 < pos_053:
+            return "แพ้ยา"
     
     if "045" in joined_data and "046" in joined_data :
         return "คลอดบุตร"

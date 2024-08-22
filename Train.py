@@ -7,6 +7,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd  # เพิ่ม import
 
+# เทรนข้อมูลจากไฟล์ data.pickle เป็นโมเดล model.p
+
 data_dict = pickle.load(open('data.pickle', 'rb'))
 
 data = np.asarray(data_dict['data'])
@@ -31,8 +33,8 @@ sns.set()
 sns.pairplot(df, hue='labels',vars=['feature_10', 'feature_11'], height=2)
 # plt.show()
 
-print(len(data))
-print(len(labels))
+# print(len(data))
+# print(len(labels))
 
 
 

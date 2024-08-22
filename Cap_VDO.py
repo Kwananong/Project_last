@@ -2,6 +2,8 @@ import os
 import cv2
 
 
+# เอาไว้ใช้เก็บท่าจากคลิปวีดีโอ
+
 DATA_DIR = './data_capVDO'
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
@@ -9,7 +11,7 @@ if not os.path.exists(DATA_DIR):
 number_of_classes = 2
 dataset_size = 100 
 
-cap = cv2.VideoCapture('./VDO/เคล็ดขัดยอก.mp4')
+cap = cv2.VideoCapture('./VDO/เคล็ดขัดยอก.mp4')  # ใส่ที่อยู่วีดีโอ
 
 for j in range(number_of_classes):
     if not os.path.exists(os.path.join(DATA_DIR, str(j))):

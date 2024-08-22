@@ -2,12 +2,14 @@ import os
 import cv2
 
 
+# เอาไว้ใช้เก็บท่าจากกล้องโน๊ตบุ๊คเรา
+
 DATA_DIR = './data_capRT'
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
 
-number_of_classes = 20
-dataset_size = 100 
+number_of_classes = 20          # จำนวนครั้งที่ถ่าย
+dataset_size = 100              # จำนวนภาพที่ถ่ายในแต่ละครั้ง
 
 cap = cv2.VideoCapture(0)
 for j in range(number_of_classes):
@@ -17,7 +19,8 @@ for j in range(number_of_classes):
     print('Collecting data for class {}'.format(j))
 
     done = False
-    while True:
+
+    while True:         #### กด q เพื่อออก ####
         ret, frame = cap.read()
         cv2.putText(frame, 'Ready? Press "Q" ! :)', (100, 50), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 255, 0), 3,
                     cv2.LINE_AA)
